@@ -1,14 +1,14 @@
 <div align="center">
 
 <!-- ═══════════════════════════════════════════════════════════════════ -->
-<!--                        HERO SECTION                                  -->
+<!--                        HERO SECTION                                  -->
 <!-- ═══════════════════════════════════════════════════════════════════ -->
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=2,12,24&height=300&section=header&text=GYEONGMIN%20KIM&fontSize=90&fontAlignY=35&desc=Python%20Full-Stack%20Developer%20%7C%20SSAFY%2015th&descSize=25&descAlignY=55&animation=twinkling"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=2,12,24&height=300&section=header&text=GYEONGMIN%20KIM&fontSize=90&fontAlignY=35&desc=Python%20Backend%20Developer%20%7C%20SSAFY%2015th&descSize=25&descAlignY=55&animation=twinkling"/>
 
 <!-- Animated Typing Header -->
 <a href="https://github.com/gangmom5272">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=1000&color=3B82F6&center=true&vCenter=true&width=1000&lines=🎨+Crafting+User-Centric+Web+Solutions;⚡+Python+%7C+Django+%7C+Vue.js+Specialist;🚀+Building+The+Future+of+Full-Stack" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=1000&color=3B82F6&center=true&vCenter=true&width=1000&lines=🐍+Python+Backend+Developer;⚡+Django+%7C+REST+API+%7C+Database+Specialist;🚀+Building+Robust+Backend+Systems" alt="Typing SVG" />
 </a>
 
 <!-- Divider -->
@@ -17,7 +17,7 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════ -->
-<!--                     ABOUT ME SECTION                                 -->
+<!--                     ABOUT ME SECTION                                 -->
 <!-- ═══════════════════════════════════════════════════════════════════ -->
 
 <div align="center">
@@ -31,18 +31,18 @@
 ### 💡 Philosophy
 ```python
 developer = {
-    "name": "Kim Gyeongmin",
-    "role": "Full-Stack Developer",
-    "mindset": "User-First Engineering",
-    "organization": "SSAFY 15th",
-    "belief": "데이터와 로직으로 사용자 경험을 완성",
-    
-    "passion": [
-        "Problem Solving",
-        "Clean Code",
-        "Continuous Learning",
-        "Team Collaboration"
-    ]
+    "name": "Kim Gyeongmin",
+    "role": "Backend Developer",
+    "mindset": "Data-Driven Engineering",
+    "organization": "SSAFY 15th",
+    "belief": "데이터와 로직으로 견고한 서버를 설계한다",
+    
+    "passion": [
+        "Problem Solving",
+        "Clean Code",
+        "Continuous Learning",
+        "Team Collaboration"
+    ]
 }
 ```
 
@@ -50,18 +50,19 @@ developer = {
 <td width="50%" valign="top">
 
 ### 🎯 Core Strengths
-```javascript
-// Backend Development
+```python
+# Backend Development
 🐍 Django REST Framework
+⚡ FastAPI
 🔌 RESTful API Design
-💾 Database Management
+💾 Database Design & Optimization
+📊 SQL Query Tuning
 
-// Frontend Development
-⚡ Vue.js Component Architecture
-🎨 Responsive Web Design
-📱 SPA (Single Page Application)
+# Data & Analysis
+📈 ADsP (데이터 분석 준전문가)
+🗃️ SQLD (SQL 개발자)
 
-// DevOps & Collaboration
+# DevOps & Collaboration
 🔧 Git/GitLab Version Control
 💬 Slack Team Communication
 🚀 Agile Development Process
@@ -74,7 +75,7 @@ developer = {
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════ -->
-<!--                    TECH STACK SECTION                                -->
+<!--                    TECH STACK SECTION                                -->
 <!-- ═══════════════════════════════════════════════════════════════════ -->
 
 <div align="center">
@@ -88,8 +89,9 @@ developer = {
 <p>
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
 <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-<img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" />
+<img src="https://img.shields.io/badge/Django_REST_Framework-ff1709?style=for-the-badge&logo=django&logoColor=white" />
+<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+<img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
 </p>
 
 ### 🛠️ Development Tools
@@ -104,7 +106,7 @@ developer = {
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════ -->
-<!--                    ALGORITHM SECTION                                 -->
+<!--                    ALGORITHM SECTION                                 -->
 <!-- ═══════════════════════════════════════════════════════════════════ -->
 
 <div align="center">
@@ -114,7 +116,7 @@ developer = {
 ## 🧩 Algorithm
 
 <a href="https://solved.ac/gangmom5272">
-  <img src="https://mazassumnida.wtf/api/v2/generate_badge?boj=gangmom5272" alt="Solved.ac Profile"/>
+  <img src="https://mazassumnida.wtf/api/v2/generate_badge?boj=gangmom5272" alt="Solved.ac Profile"/>
 </a>
 
 <br><br>
@@ -132,13 +134,15 @@ developer = {
 
 <p>
 <img src="https://img.shields.io/badge/정보처리기사-00897B?style=for-the-badge&logoColor=white" />
+<img src="https://img.shields.io/badge/ADsP-0052CC?style=for-the-badge&logoColor=white" />
+<img src="https://img.shields.io/badge/SQLD-4479A1?style=for-the-badge&logoColor=white" />
 <img src="https://img.shields.io/badge/TOEIC_SPEAKING_IM3-FF6F00?style=for-the-badge&logoColor=white" />
 </p>
 
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════ -->
-<!--                    ADDITIONAL FEATURES                               -->
+<!--                    ADDITIONAL FEATURES                               -->
 <!-- ═══════════════════════════════════════════════════════════════════ -->
 
 <div align="center">
@@ -151,10 +155,10 @@ developer = {
 <tr>
 <td width="50%" valign="top">
 
-### 🎨 Development Excellence
-- ✅ **Backend**: Django REST Framework, API Design
-- ✅ **Frontend**: Vue.js, Responsive Design
-- ✅ **Database**: SQL Query Optimization
+### 🖥️ Backend Excellence
+- ✅ **API Design**: Django REST Framework, RESTful Architecture
+- ✅ **Database**: SQL Query Optimization, Schema Design
+- ✅ **Data Analysis**: ADsP, SQLD 기반 데이터 설계
 - ✅ **Version Control**: Git Flow, Branch Strategy
 - ✅ **Collaboration**: Agile, Code Review
 - ✅ **Problem Solving**: Algorithm & Data Structure
@@ -177,7 +181,7 @@ developer = {
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════ -->
-<!--                        FOOTER                                        -->
+<!--                        FOOTER                                        -->
 <!-- ═══════════════════════════════════════════════════════════════════ -->
 
 <div align="center">
@@ -190,4 +194,3 @@ developer = {
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=2,12,24&height=150&section=footer"/>
 
 </div>
-이거 내 깃허브인데 학습해봐
