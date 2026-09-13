@@ -1,14 +1,20 @@
-# Backend / Data Engineer &nbsp;|&nbsp; 외부 API 수집·정제 파이프라인 설계 &nbsp;|&nbsp; 모델 검증과 지표 정의
+# 김경민 (Gyeongmin Kim)
 
-**데이터가 들어와서 쓸 수 있는 형태로 나가기까지를 다룹니다.**
+**Data Engineer**
 
 ---
 
 ### 소개
 
-- **수집과 정제를 설계하는 일**을 하고 싶습니다. 외부 API 원본과 내부 모델을 분리하고, 실패 경로를 미리 나눠두는 쪽입니다.
-- **재보기 전에는 믿지 않습니다.** 모델 성능도 데이터 품질도 지표를 정하고 측정한 뒤에 판단합니다.
-- **결과의 한계를 함께 적습니다.** 어디까지가 검증된 것이고 어디부터가 추정인지 구분해서 남깁니다.
+**해온 일**
+- 공공데이터 API 수집·정제 파이프라인 설계 (재난문자, 서울시 도시데이터)
+- 외부 소스 2종 통합해 1,001건 데이터셋 구축
+- 인파 혼잡도 지표 정의 및 모델 성능 측정·비교 검증
+- FastAPI / Django 기반 백엔드 개발
+
+**관심 분야**
+- 서로 다른 소스의 데이터를 하나의 기준으로 맞추는 일
+- 파이프라인이 깨지는 지점을 미리 나눠두는 설계
 
 ---
 
@@ -63,11 +69,12 @@ Vue 3 · React · OpenAI API · Nginx · YOLO11n
 
 ### Education
 
-삼성 청년 SW 아카데미(SSAFY) 15기 · 2026.12 수료 예정
+삼성 청년 SW 아카데미(SSAFY) 15기 · 2026.12 수료<br/>
 한국외국어대학교 글로벌캠퍼스 프랑스학과 · 2026.02 졸업
 
 ---
 
 ### Contact
 
-[![Gmail](https://img.shields.io/badge/rudalstbvj@naver.com-03C75A?style=flat-square&logo=naver&logoColor=white)](mailto:rudalstbvj@naver.com)
+[![Gmail](https://img.shields.io/badge/gangmom5272@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:gangmom5272@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/%EA%B2%BD%EB%AF%BC-%EA%B9%80-31774b426/)
