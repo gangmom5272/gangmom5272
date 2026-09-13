@@ -11,12 +11,17 @@
 | **SAFY** | 군중 밀집 위험을 실시간으로 파악하고 대응해 사고 예방에 도움을 주는 서비스 | 팀장 · 데이터 · AI | **2위** |
 | **[aemanbo](https://github.com/gangmom5272/aemanbo)** | 애니메이션과 원작 만화의 연결 지점을 찾아, 이어보기를 바로 시작할 수 있게 도와주는 서비스 | 팀장 · 백엔드 · 데이터셋 구축 | **1위** |
 
-**SAFY**
+**SAFY** — 팀 프로젝트의 `data/`(수집·정제 서버)와 `ai/`(분석 서버)를 담당
 
-- 외부 API 원본 모델과 내부 정규화 모델을 분리해, 외부 스펙 변경이 내부로 번지지 않게 설계
+- 공공데이터 API 3종(재난문자·서울시 혼잡도·서울시 행사) 수집 파이프라인 설계. 외부 원본 모델과 내부 정규화 모델을 분리해 외부 스펙 변경이 내부로 번지지 않게 함
 - 실패 경로를 5종으로 분리 (타임아웃 / HTTP / JSON 파싱 / 기관 오류코드 / 스키마 불일치)
-- 혼잡도 지표를 직접 정의 (8×8 격자 64칸, 전체 C / 국소 2×2 L) 후 계산 근거를 이미지로 렌더링
-- 전체 MAE 1.17을 시나리오별로 분해해 국소 밀집 구간만 2.33으로 튀는 것을 확인 → 고밀도 전용 모델 P2PNet·DM-Count 비교 검증
+- 혼잡도 지표 C·L을 직접 정의(8×8 격자)하고 제보 단위 위험도 공식을 설계
+- YOLO 성능을 시나리오별로 분해해 고밀도 구간의 과소 탐지를 확인 → **P2PNet을 SAFY 환경에 맞게 미세 조정**
+- 미세 조정용 **머리 좌표 데이터셋 4,395장 구축** (JHU-CROWD++ 4,344 + 사용 동의를 받은 팀 사진 51장 수동 라벨링, 머리 좌표 약 150만 개)
+- 독립 홀드아웃 검증에서 고밀도 표본 1,154장 기준 **Count MAE 425.18 → 121.84**, C MAE 44.15 → 5.55 개선
+- 운영은 YOLO를 쓰고 P2PNet은 **그림자 모델로 관찰**하는 구조로 설계. 자동 전환 임계값은 근거가 부족해 고정하지 않음
+- 운영 서버 실측 **평균 지연 57ms / P95 69ms / 17.4 FPS**, 546회 연속 요청 실패 0건
+- 기술 검증 문서 31종, 테스트 83종 작성
 
 **aemanbo**
 
@@ -42,7 +47,7 @@
 
 **ML**
 
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white) ![YOLO11n](https://img.shields.io/badge/YOLO11n-042AFF?style=flat-square&logo=ultralytics&logoColor=white) ![OpenAI API](https://img.shields.io/badge/OpenAI%20API-412991?style=flat-square)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white) ![YOLO11n](https://img.shields.io/badge/YOLO11n-042AFF?style=flat-square&logo=ultralytics&logoColor=white) ![P2PNet](https://img.shields.io/badge/P2PNet-5B21B6?style=flat-square) ![OpenAI API](https://img.shields.io/badge/OpenAI%20API-412991?style=flat-square)
 
 **Infra & CI**
 
