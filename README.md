@@ -1,193 +1,73 @@
-<div align="center">
+# Backend / Data Engineer &nbsp;|&nbsp; 외부 API 수집·정제 파이프라인 설계 &nbsp;|&nbsp; 모델 검증과 지표 정의
 
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-<!--                        HERO SECTION                                  -->
-<!-- ═══════════════════════════════════════════════════════════════════ -->
+**데이터가 들어와서 쓸 수 있는 형태로 나가기까지를 다룹니다.**
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=2,12,24&height=300&section=header&text=GYEONGMIN%20KIM&fontSize=90&fontAlignY=35&desc=Python%20Full-Stack%20Developer%20%7C%20SSAFY%2015th&descSize=25&descAlignY=55&animation=twinkling"/>
+---
 
-<!-- Animated Typing Header -->
-<a href="https://github.com/gangmom5272">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=1000&color=3B82F6&center=true&vCenter=true&width=1000&lines=🎨+Crafting+User-Centric+Web+Solutions;⚡+Python+%7C+Django+%7C+Vue.js+Specialist;🚀+Building+The+Future+of+Full-Stack" alt="Typing SVG" />
-</a>
+### 소개
 
-<!-- Divider -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+- **수집과 정제를 설계하는 일**을 하고 싶습니다. 외부 API 원본과 내부 모델을 분리하고, 실패 경로를 미리 나눠두는 쪽입니다.
+- **재보기 전에는 믿지 않습니다.** 모델 성능도 데이터 품질도 지표를 정하고 측정한 뒤에 판단합니다.
+- **결과의 한계를 함께 적습니다.** 어디까지가 검증된 것이고 어디부터가 추정인지 구분해서 남깁니다.
 
-</div>
+---
 
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-<!--                     ABOUT ME SECTION                                 -->
-<!-- ═══════════════════════════════════════════════════════════════════ -->
+### Projects
 
-<div align="center">
+| 프로젝트 | 한 줄 | 역할 | 성과 |
+|---|---|---|---|
+| **SAFY** <br/>재난·인파 안전 서비스 | 공공데이터 수집 파이프라인 + 인파 혼잡도 분석 | 팀장 · 데이터 · AI<br/>6명 팀 / 커밋 32 of 118 | **발표회 2위**<br/>(반 대표 선발 후 진출) |
+| **[aemanbo](https://github.com/gangmom5272/aemanbo)** <br/>애니↔만화 이어보기 매핑 | 외부 소스 2종을 통합해 데이터셋 구축 | 백엔드 · 데이터셋<br/>2명 팀 / 커밋 36 of 42 | **프로젝트 1위**<br/>1,001건 × 39필드 구축 |
 
-## 🌟 About Me
+**SAFY** — 재난문자·서울시 도시데이터를 수집·정제하고, 영상에서 인파 혼잡도를 계산하는 서비스
 
-<table>
-<tr>
-<td width="50%" valign="top">
+- 외부 API 원본 모델과 내부 정규화 모델을 분리해, 외부 스펙 변경이 내부로 번지지 않게 설계
+- 실패 경로를 5종으로 분리 (타임아웃 / HTTP / JSON 파싱 / 기관 오류코드 / 스키마 불일치)
+- 혼잡도 지표를 직접 정의 (8×8 격자 64칸, 전체 C / 국소 2×2 L) 후 계산 근거를 이미지로 렌더링
+- 전체 MAE 1.17을 시나리오별로 분해해 국소 밀집 구간만 2.33으로 튀는 것을 확인 → 고밀도 전용 모델 2종 비교 검증
 
-### 💡 Philosophy
-```python
-developer = {
-    "name": "Kim Gyeongmin",
-    "role": "Full-Stack Developer",
-    "mindset": "User-First Engineering",
-    "organization": "SSAFY 15th",
-    "belief": "데이터와 로직으로 사용자 경험을 완성",
-    
-    "passion": [
-        "Problem Solving",
-        "Clean Code",
-        "Continuous Learning",
-        "Team Collaboration"
-    ]
-}
-```
+**aemanbo** — 애니메이션을 다 본 사람에게 원작 만화를 몇 권 몇 화부터 이어 보면 되는지 알려주는 서비스
 
-</td>
-<td width="50%" valign="top">
+- 수집 → 보강 → 병합 → 번역 → 정규화 → 분류 → 적재를 9개 스크립트로 단계 분리
+- 두 API의 식별 체계가 달라 생긴 매핑 실패를 필드별 완성도로 측정 (작품 메타 99~100% vs 이어보기 78.3%)
+- LLM이 없는 작품을 생성하는 문제를 DB 실재 목록 내 선택으로 제한해 해결
 
-### 🎯 Core Strengths
-```javascript
-// Backend Development
-🐍 Django REST Framework
-🔌 RESTful API Design
-💾 Database Management
+---
 
-// Frontend Development
-⚡ Vue.js Component Architecture
-🎨 Responsive Web Design
-📱 SPA (Single Page Application)
+### Tech
 
-// DevOps & Collaboration
-🔧 Git/GitLab Version Control
-💬 Slack Team Communication
-🚀 Agile Development Process
-```
+**프로젝트에 적용**
 
-</td>
-</tr>
-</table>
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white)
+![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=flat-square&logo=pydantic&logoColor=white)
+![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![GitLab CI](https://img.shields.io/badge/GitLab%20CI-FC6D26?style=flat-square&logo=gitlab&logoColor=white)
+![Jira](https://img.shields.io/badge/Jira-0052CC?style=flat-square&logo=jira&logoColor=white)
 
-</div>
+**학습 중**
 
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-<!--                    TECH STACK SECTION                                -->
-<!-- ═══════════════════════════════════════════════════════════════════ -->
+![Hadoop](https://img.shields.io/badge/Hadoop-66CCFF?style=flat-square&logo=apachehadoop&logoColor=black)
+![Spark](https://img.shields.io/badge/Spark-E25A1C?style=flat-square&logo=apachespark&logoColor=white)
+![Java](https://img.shields.io/badge/Java-437291?style=flat-square&logo=openjdk&logoColor=white)
 
-<div align="center">
+**다뤄본 경험**
+Vue 3 · React · OpenAI API · Nginx · YOLO11n
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+---
 
-## 🛠️ Tech Stack
+### Education
 
-### ⚡ Core Technologies
+삼성 청년 SW 아카데미(SSAFY) 15기 · 2026.12 수료 예정
+한국외국어대학교 글로벌캠퍼스 프랑스학과 · 2026.02 졸업
 
-<p>
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-<img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" />
-</p>
+---
 
-### 🛠️ Development Tools
+### Contact
 
-<p>
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
-<img src="https://img.shields.io/badge/GitLab-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white" />
-<img src="https://img.shields.io/badge/Visual_Studio_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" />
-<img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white" />
-</p>
-
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-<!--                    ALGORITHM SECTION                                 -->
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-
-<div align="center">
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-
-## 🧩 Algorithm
-
-<a href="https://solved.ac/gangmom5272">
-  <img src="https://mazassumnida.wtf/api/v2/generate_badge?boj=gangmom5272" alt="Solved.ac Profile"/>
-</a>
-
-<br><br>
-
-### 🏆 Coding Platforms
-
-<p>
-<img src="https://img.shields.io/badge/Baekjoon-0052CC?style=for-the-badge&logoColor=white" />
-<img src="https://img.shields.io/badge/CodeTree-6DB33F?style=for-the-badge&logoColor=white" />
-</p>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-
-## 📜 Certifications
-
-<p>
-<img src="https://img.shields.io/badge/정보처리기사-00897B?style=for-the-badge&logoColor=white" />
-<img src="https://img.shields.io/badge/TOEIC_SPEAKING_IM3-FF6F00?style=for-the-badge&logoColor=white" />
-</p>
-
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-<!--                    ADDITIONAL FEATURES                               -->
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-
-<div align="center">
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-
-## 🎯 Featured Skills
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### 🎨 Development Excellence
-- ✅ **Backend**: Django REST Framework, API Design
-- ✅ **Frontend**: Vue.js, Responsive Design
-- ✅ **Database**: SQL Query Optimization
-- ✅ **Version Control**: Git Flow, Branch Strategy
-- ✅ **Collaboration**: Agile, Code Review
-- ✅ **Problem Solving**: Algorithm & Data Structure
-
-</td>
-<td width="50%" valign="top">
-
-### ⚙️ Development Practices
-- ✅ **Code Quality**: Clean Code, PEP 8
-- ✅ **Documentation**: README, API Docs
-- ✅ **Testing**: Unit Test, Integration Test
-- ✅ **Teamwork**: Pair Programming, Daily Scrum
-- ✅ **Learning**: Tech Blog, Study Groups
-- ✅ **Goal-Oriented**: Continuous Improvement
-
-</td>
-</tr>
-</table>
-
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-<!--                        FOOTER                                        -->
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-
-<div align="center">
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-
-> *"복잡한 문제를 단순한 로직으로 해결하는 즐거움"*
-
-<!-- Footer Wave -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=2,12,24&height=150&section=footer"/>
-
-</div>
-이거 내 깃허브인데 학습해봐
+[![Gmail](https://img.shields.io/badge/rudalstbvj@naver.com-03C75A?style=flat-square&logo=naver&logoColor=white)](mailto:rudalstbvj@naver.com)
